@@ -1,5 +1,4 @@
 {% load static %}
-{% load swampdragon_tags %}
 <!DOCTYPE html>
 <html lang="en" ng-app="TodoApp">
   <head>
@@ -7,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Swamp Dragon - DjangoCon Europe 2015</title>
+    <title>Pusher - DjangoCon Europe 2015</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static 'todo/css/app.css' %}" rel="stylesheet">
@@ -40,10 +39,9 @@
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 
-    {% swampdragon_settings %}
-    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angular.pusher/latest/pusher-angular.min.js"></script>
     <script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
-    <script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
 
     <!-- Notification app -->
     <script type="text/javascript" src="{% static 'todo/js/app.js' %}"></script>

@@ -1,4 +1,4 @@
 var TodoApp = angular.module('TodoApp', [
-    'SwampDragonServices',
+    'pusher-angular',
     'TodoControllers'
 ]);
