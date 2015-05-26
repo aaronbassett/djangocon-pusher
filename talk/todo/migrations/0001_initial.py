@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import swampdragon.models
+import todo.mixins
 
 
 class Migration(migrations.Migration):
@@ -18,9 +18,7 @@ class Migration(migrations.Migration):
                 ('done', models.BooleanField(default=False)),
                 ('text', models.CharField(max_length=100)),
             ],
-            options={
-            },
-            bases=(swampdragon.models.SelfPublishModel, models.Model),
+            bases=(todo.mixins.SelfPublishModel, models.Model),
         ),
         migrations.CreateModel(
             name='TodoList',
@@ -29,14 +27,11 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('description', models.TextField()),
             ],
-            options={
-            },
-            bases=(swampdragon.models.SelfPublishModel, models.Model),
+            bases=(todo.mixins.SelfPublishModel, models.Model),
         ),
         migrations.AddField(
             model_name='todoitem',
             name='todo_list',
             field=models.ForeignKey(to='todo.TodoList'),
-            preserve_default=True,
         ),
     ]

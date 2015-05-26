@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'swampdragon',
     'todo',
 )
 
@@ -86,6 +85,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-# SwampDragon settings
-SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
-DRAGON_URL = 'http://localhost:9999/'
+# Pusher settings
+PUSHER_APP_ID = u'111545'
+PUSHER_KEY = u'895dec4d68d4e286a48d'
+PUSHER_SECRET = u'3cd18f6810c758057767'

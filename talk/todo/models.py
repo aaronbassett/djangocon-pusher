@@ -2,13 +2,14 @@
 
 # Django
 from django.db import models
-# Swamp Dragon
-from swampdragon.models import SelfPublishModel
+
+from .mixins import SelfPublishModel
 from .serializers import TodoListSerializer, TodoItemSerializer
 
 
 class TodoList(SelfPublishModel, models.Model):
     serializer_class = TodoListSerializer
+    channel_name = u"todo-list"
 
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -21,6 +22,7 @@ class TodoList(SelfPublishModel, models.Model):
 
 class TodoItem(SelfPublishModel, models.Model):
     serializer_class = TodoItemSerializer
+    channel_name = u"todo-item"
 
     todo_list = models.ForeignKey(TodoList)
     done = models.BooleanField(default=False)
