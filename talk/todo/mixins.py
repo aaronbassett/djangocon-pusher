@@ -26,8 +26,8 @@ class SelfPublishModel(object):
         else:
             action = u"updated"
 
-        self._publish(action)
         super(SelfPublishModel, self).save(*args, **kwargs)
+        self._publish(action)
 
 
 @receiver(pre_delete)
